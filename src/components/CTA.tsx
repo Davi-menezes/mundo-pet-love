@@ -56,7 +56,7 @@ export default function CTA() {
             Saúde, beleza e bem-estar animal num único lugar — com uma equipe que trata seu pet como família. Venha conhecer ou agende agora pelo WhatsApp.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href={waUrl} target="_blank" rel="noopener noreferrer" className="btn-primary"
               style={{ fontSize: '1rem', padding: '1rem 2.25rem', boxShadow: '0 8px 32px rgba(245,158,11,.35)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

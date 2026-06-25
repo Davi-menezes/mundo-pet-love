@@ -37,6 +37,7 @@ export default function Contact() {
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}
+          className="contact-banner"
           style={{ background: 'linear-gradient(135deg, #2e2010, #1f160a)', border: '1px solid rgba(245,158,11,.18)', borderRadius: 28, padding: 'clamp(2rem,5vw,3.5rem)', marginBottom: '2.5rem', display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', justifyContent: 'space-between', position: 'relative', overflow: 'hidden' }}
         >
           <div style={{ position: 'absolute', right: '-5%', top: '-40%', width: 320, height: 320, background: 'radial-gradient(ellipse, rgba(245,158,11,.12), transparent 70%)', pointerEvents: 'none' }} />

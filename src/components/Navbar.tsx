@@ -81,7 +81,8 @@ export default function Navbar() {
                 backgroundColor: '#1a1208',
                 borderRadius: '50%',
               }} />
-              <span>🎁 OFERTA DE BOAS-VINDAS: Agende o 1º Banho & Tosa do seu pet com 15% OFF! </span>
+              <span className="promo-text-desktop">🎁 OFERTA DE BOAS-VINDAS: Agende o 1º Banho & Tosa do seu pet com 15% OFF! </span>
+              <span className="promo-text-mobile">🎁 15% OFF no 1º Banho & Tosa! </span>
               <span style={{ textDecoration: 'underline', fontWeight: 900 }}>Garantir Cupom →</span>
             </a>
           </motion.div>
