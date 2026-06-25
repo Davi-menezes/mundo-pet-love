@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --font-display: 'Nunito', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Warm dark palette — cozy, not cold */
+  --c-bg:       #1a1208;
+  --c-bg2:      #221910;
+  --c-surface:  #2a1f12;
+  --c-border:   rgba(251,191,36,.12);
+  --c-border2:  rgba(255,255,255,.07);
+
+  /* Brand warm */
+  --c-amber:    #f59e0b;
+  --c-amber-lt: #fcd34d;
+  --c-orange:   #fb923c;
+  --c-rose:     #fb7185;
+  --c-green:    #34d399;
+
+  /* Text */
+  --c-white:    #fef9f0;
+  --c-soft:     #e8dcc8;
+  --c-muted:    #9c8c72;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--c-bg);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--c-bg); }
+::-webkit-scrollbar-thumb { background: var(--c-amber); border-radius: 99px; }
+
+/* ── Typography ────────────────────────────────────────────── */
+.display {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+}
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.overline {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+}
+
+/* ── Gradient text ─────────────────────────────────────────── */
+.grad-text {
+  background: linear-gradient(110deg, var(--c-amber-lt) 0%, var(--c-orange) 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border2);
+  border-radius: 20px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s;
+}
+.card:hover {
+  border-color: rgba(245,158,11,.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25), 0 0 1px 1px rgba(245,158,11,.15) inset;
+}
+.card-warm {
+  background: linear-gradient(145deg, #2e2010, #1f160a);
+  border: 1px solid var(--c-border);
+  border-radius: 24px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s;
+}
+.card-warm:hover {
+  border-color: rgba(245,158,11,.5);
+  box-shadow: 0 16px 36px rgba(245,158,11,.08);
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  background: linear-gradient(135deg, var(--c-amber) 0%, var(--c-orange) 100%);
+  color: #1a1208;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 800;
+  padding: .9rem 2rem;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s, filter .2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(245,158,11,.2);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s ease-in-out;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(245,158,11,.4);
+  filter: brightness(1.05);
+}
+.btn-primary:hover::before {
+  left: 150%;
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  background: rgba(255,255,255,.02);
+  color: var(--c-soft);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 700;
+  padding: .9rem 2rem;
+  border-radius: 99px;
+  border: 1px solid var(--c-border2);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color .3s, background .3s, transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover {
+  border-color: var(--c-amber);
+  background: rgba(245,158,11,.08);
+  color: var(--c-white);
+  transform: translateY(-2px);
+}
+
+/* ── Utilities ─────────────────────────────────────────────── */
+.section  { padding: 6rem 1.5rem; }
+.container{ max-width: 1100px; margin: 0 auto; }
+.divider  { height: 1px; background: linear-gradient(90deg, transparent, var(--c-border2), transparent); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem 1rem;
+  border-radius: 99px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.25);
+  color: var(--c-amber-lt);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--c-amber-lt);
+}
+.icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Mobile overrides ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .section  { padding: 4rem 1.25rem; }
+  .display  { letter-spacing: -.015em; }
+  .headline { letter-spacing: -.015em; }
+  .container{ padding: 0; }
+
+  /* About mosaic: stack vertically on small screens */
+  .about-mosaic {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 220px 160px 160px !important;
+  }
+  .about-mosaic > div:first-child { grid-row: auto !important; }
+
+  /* Footer: center everything */
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+  }
+}
