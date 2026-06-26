@@ -3,8 +3,8 @@ export const BUSINESS = {
   tagline: 'Porque eles\nmerecem o melhor.',
   sub: 'Pet shop, banho & tosa, veterinário e farmácia — tudo em um só lugar, com cuidado de verdade, em Porto Velho.',
   address: 'R. Pau Ferro, 1528–1544 · Porto Velho, RO',
-  phone: '(69) 3227-5428',
-  whatsapp: '5569932275428',
+  phone: '(XX) XXXX-XXXX',
+  whatsapp: '55XXXXXXXXXXX',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Mundo%20Pet%20Love%20-%20Pet%20Shop%2C%20Banho%20e%20Tosa&query_place_id=ChIJ_UM5I3pcMpIRLaBZq1ZXhpE',
   waMsg: 'Olá! Gostaria de agendar um serviço no Mundo Pet Love.',
 }
